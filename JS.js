@@ -122,3 +122,7 @@ console.log(nyamki);
 // 	    injectListener(newLi);
 // 	}
 // }
+// http://codestory.ru/git/fe.php
+// qtype=getNyamki
+// qtype=getCategories
+// chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
