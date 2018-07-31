@@ -4,3 +4,9 @@ h1 {
 .col-lg-4 {
 	text-align: center;
 }
+.container_goods {
+	border: 1px solid blue;
+}
+.container_goods img {
+	width: 100%;
+}
