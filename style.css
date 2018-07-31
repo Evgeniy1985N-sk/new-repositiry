@@ -1,12 +1,24 @@
+.row {
+	background-color: #aacff2;
+}
 h1 {
 	text-align: center; 
 }
+h3 {
+	padding-bottom: 10px;
+}
 .col-lg-4 {
 	text-align: center;
+	background-color: #aacff2;
 }
 .container_goods {
-	border: 1px solid blue;
+	border: 1px solid #8c8efa;
+	height: 457px;
+	margin-bottom: 25px;
+	background-color: #dfdff5;
 }
 .container_goods img {
-	width: 100%;
+	width: 355px;
+	height: 350px;
+	object-fit: cover;
 }

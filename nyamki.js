@@ -12,3 +12,4 @@ const nyamki=[
   {type: 'icecream', name: 'Rojok', price: 300, pic: 'https://www.hesburger.ru/clients/hesburger/mellow_internal/imagefolder/ru//generated/dscf3282340xs_60.jpg'},
   {type: 'icecream', name: 'Fruit Ice', price: 300, pic: 'http://vsedeserti.ru/wp-content/uploads/2015/03/Morozhenoe-fruktovyj-led1-360x240.jpg'},
 ];
+
