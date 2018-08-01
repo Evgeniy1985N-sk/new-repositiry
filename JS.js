@@ -1,128 +1,104 @@
-console.log(nyamki);
 
 
-	let container=document.querySelector(".container");
-	let mainRow=document.createElement('div');
-	mainRow.className="row";
-	container.appendChild(mainRow);
+let container=document.querySelector(".container");
+		let mainRow = document.createElement('div');
+		mainRow.className="row";
+		container.appendChild(mainRow);
+
+
+	// ---------------------------ICECREAM-------------------------
+
+		let iceCol = document.createElement('div');
+		iceCol.className="col-lg-4";
+		mainRow.appendChild(iceCol);
+
+		let iceH2 = document.createElement('h2');
+		iceH2.innerText="Мороженка";
+		iceCol.appendChild(iceH2);
+
+		
 
 
 
-	let iceCol = document.createElement('div');
-	iceCol.className="col-lg-4";
-	mainRow.appendChild(iceCol);
+		//-------BAKE----------------------------------------------------------
 
-	let iceh2 = document.createElement('h2');
-	iceCol.appendChild(iceh2);
-	iceh2.innerText="Мороженка";
+		let bakeCol = document.createElement('div');
+		bakeCol.className="col-lg-4";
+		mainRow.appendChild(bakeCol);
+
+		let bakeH2 = document.createElement('h2');
+		bakeH2.innerText="Торты";
+		bakeCol.appendChild(bakeH2);
+
+		// ---------CAKE--------------------------------------------------------
+
+		let cakeCol = document.createElement('div');
+		cakeCol.className="col-lg-4";
+		mainRow.appendChild(cakeCol);
+
+		let cakeH2 = document.createElement('h2');
+		cakeH2.innerText="Пирожное";
+		cakeCol.appendChild(cakeH2);
+
+		
+
+	// ----------------------------function-------------
+
+	 nyamki.forEach(el=> {
+
+	 	let iceConteiner = document.createElement('div');
+		iceConteiner.className="container_goods";
+		iceCol.appendChild(iceConteiner);
+
+		let iceH3 = document.createElement('h3');
+		iceConteiner.appendChild(iceH3);
+
+		let iceImg = document.createElement('img');
+		iceConteiner.appendChild(iceImg);
+
+		let iceH4 = document.createElement('h4');
+		iceConteiner.appendChild(iceH4);
+
+    
+    		
+    	iceH3.innerText = el.name;
+
+		iceImg.src= el.pic;
+
+		iceH4.innerText = el.price;
+
 	
+   		if (el.type === 'cake' ) {
 
 
-	let cakeCol = document.createElement('div');
-	cakeCol.className="col-lg-4";
-	mainRow.appendChild(cakeCol);
+   			bakeCol.appendChild(iceConteiner);
+   				
+   		}
 
-	let cakeH2 = document.createElement('h2');
-	iceCol.appendChild(cakeH2);
-	cakeH2.innerText="Пирожное";
-
-	
-
-	let bakeCol = document.createElement('div');
-	bakeCol.className="col-lg-4";
-	mainRow.appendChild(bakeCol);
-
-	let bakeH2 = document.createElement('h2');
-	iceCol.appendChild(bakeH2);
-	bakeH2.innerText="Торты";
+   		if (el.type === 'bake' ) {
 
 
-	// 	let iceCol = document.createElement('div');
-	// iceCol.className="col-lg-4";
-	// mainRow.appendChild(iceCol);
+   			cakeCol.appendChild(iceConteiner);
+   				
+   		}
 
-	// let iceHeader = document.createElement('h2');
-	// iceCol.appendChild(iceHeader);
-	// iceHeader.innerText="Мороженка"
-
-	// let contGoods = document.createElement('div');
-	// contGoods.className="container_goods";
-	// colLg.appendChild(contGoods);
-
-	// let h3 = document.createElement('h3');
-	// contGoods.appendChild(h3);
-
-	// let img = document.createElement('img');
-	// contGoods.appendChild(img);
-
-	// let h4 = document.createElement('h4');
-	// contGoods.appendChild(h4);
+    });
 
 
-
-	// let colLg1 = document.createElement('div');
-	// colLg1.className="col-lg-4";
-	// mainRow.appendChild(colLg1);
-
-	// let h2a = document.createElement('h2');
-	// colLg1.appendChild(h2a);
-
-	// let contGoods1 = document.createElement('div');
-	// contGoods.className="container_goods";
-	// colLg1.appendChild(contGoods1);
-
-	// let h3a = document.createElement('h3');
-	// contGoods1.appendChild(h3a);
-
-	// let img1 = document.createElement('img');
-	// contGoods.appendChild(img1);
-
-	// let h4a = document.createElement('h4');
-	// contGoods.appendChild(h4a);  
-
-
-
-
-	 nyamki.forEach(el=>{
-
-    	
-    	console.log('el',el);
-
-
-    })
-
-    // for (let i=0; i < nyamki.length; i++) {
-    // 	if (i >= 0) {
-    // 		function() {
-    // 		h2 = nyamki[i].type;
-    // 		h3 = nyamki[i].name;
-    // 		h4 = nyamki[i].price;
-    // 		img = nyamki[i].pic;
-    // 	}
-    // 	}
-
-    // }
-
- 
-
-
-
-
-// var typeOfGoods = document.getElementsByTagName('h2');
-//     for (let i = 0; i < typeOfGoods.length; i++) {
-//     }
-
-
-// function() {
-// 	if (true) {
-// 	    var newGoods = document.createElement('div');
-// 	    newGoods.innerHTML = document.getElementsByClassName('col-lg-4').value;//<li></li>
-	    
-// 	    list.appendChild(newLi);
-// 	    injectListener(newLi);
-// 	}
-// }
 // http://codestory.ru/git/fe.php
 // qtype=getNyamki
 // qtype=getCategories
 // chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+//$.get()(function(){})
+
+
+var filePhp = $.get( "http://codestory.ru/git/fe.php", 
+	{ 
+		qtype: "getNyamki" 
+	}, function( data ) 
+  {
+    console.log( "Data Loaded: ", JSON.parse(data));//JSON
+ });
+// var event = JSON.parse(filePhp);
+alert()
+//http://phpfaq.ru/newbie/na_tanke#js
