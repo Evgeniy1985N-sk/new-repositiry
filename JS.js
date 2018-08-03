@@ -99,51 +99,8 @@ var filePhp = $.get( "http://codestory.ru/git/fe.php",
   {
     console.log( "Data Loaded: ", JSON.parse(data));//JSON
  });
-// var event = JSON.parse(filePhp);
-alert()
+// var event = JSON.parse(filePhp)
 //http://phpfaq.ru/newbie/na_tanke#js
 
 
 
-// ----------------------------Lessson
-
-
-// var request = new XMLHttpRequest();
-// var but = document.querySelector('.btn');
-
-// but.onclick = function() {
-
-// 	but.innerHTML = request.responseText;
-	
-
-// }
-
-// request.open('GET', '/hello.txt');
-// request.send();
-
-
-// var btn = document.querySelector('button');
-
-// btn.addEventListener('click', function (ev) {
-// 	ev.preventDefault();
-
-// 	window.fetch('/hello.json')
-// 		.then(function(response) {
-// 			console.log(response);
-// 			return response.json();
-// 		})
-
-// 		.then(function(response) {
-// 			document.querySelector('.project')
-// 			.innerHTML = response.project;
-
-// 			document.querySelector('.course')
-// 			.innerHTML = response.course;
-
-// 			document.querySelector('.module')
-// 			.innerHTML = response.module;
-
-// 			document.querySelector('.teacher')
-// 			.innerHTML = response.teacher;
-// 		})
-// });
