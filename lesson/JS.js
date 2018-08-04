@@ -38,32 +38,52 @@
 // 		})
 // });
 
-// var lang1 = querySelector
-	var text = document.getElementById('text').value;
+
+
+// home work
+
+
+	var textInput = document.getElementById('text').value;
+	var textInput2 = document.getElementById('text2').value;	
+
 	var selectElem = document.getElementById('select');
+	var selectElem2 = document.getElementById('select2');
 
 
 // Когда выбран новый элемент <option>
+
+
 	selectElem.addEventListener('change', function() {
+
   		var index = selectElem.selectedIndex;
+  		
+
 });
 		
-	var selectElem1 = document.getElementById('select1');
+	
 
 
 // Когда выбран новый элемент <option>
-	selectElem1.addEventListener('change', function() {
-  		var index1 = selectElem1.selectedIndex;
+
+	selectElem2.addEventListener('change', function() {
+
+  		var index2 = selectElem2.selectedIndex;
+
   
 });
 
 
-	var but = document.querySelector('button');
-	but.onclick = function() {
+	var btn = document.querySelector('button');
+	
+	btn.onclick = function() {
 
-	var text2 = document.getElementById('text').value;
+		var word = document.getElementById('text').value;
+		console.log(word);
 
 }
-	var text2 = document.getElementById('text').value;
+
+
+
+	
 
 // trnsl.1.1.20180803T100432Z.60b479d535905337.aebac5c9f900934c6955fb3dad5539c584e4a58a
