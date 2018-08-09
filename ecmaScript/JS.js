@@ -145,3 +145,71 @@
 // 	return ''
 // }
 
+
+// ----------Class-------------
+
+
+
+// function Animal() {
+// 	this.name = 'Abstract Animal';
+// 	this.sayHello = function() {
+// 		console.log(`Hello from ${this.name}` );
+// 	}
+// }
+
+// const animal = new Animal();
+// animal.sayHello();
+
+
+// class Animal {
+// 	constructor() {
+// 		console.log('Создан новый экземпляр Animal');
+// 		this.name = `Abstract Animal`;
+// 	}
+
+// 	sayHello() {
+// 		console.log(`Hello from ${this.name}`);
+
+	
+// 	}
+
+// }
+
+// // const animal = new Animal;
+// // animal.sayHello();
+
+// class Cat extends Animal {
+// 	constructor() {
+// 		super(); //Animal constructor
+// 			this.name = 'Kity';
+
+// 		}
+// 	}
+
+// class Dog extends Animal {
+// 	constructor() {
+// 		super();
+// 		this.name = 'Doggy';
+// 		console.log('Gav!');
+// 	}
+// }
+
+// const cat = new Cat;
+// const dog = new Dog;
+// cat.sayHello();
+// dog.sayHello();
+
+
+class User {
+
+	constructor(name) {
+		
+	}
+}
+
+
+// ------------------home work---------
+
+
+
+
