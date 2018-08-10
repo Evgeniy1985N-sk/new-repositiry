@@ -20,14 +20,22 @@ h4 {
 	height: 457px;
 	margin-bottom: 25px;
 	background-color: #dfdff5;
+	display: block;
 }
 .container_goods img {
 	width: 355px;
 	height: 350px;
 	object-fit: cover;
 }
-.basket {
+.bascket {
 	border: 1px solid blue; 
 	background: white;
-	padding-left: 38px;
+	padding-left: 30px;
+	width: 120px;
+	float: right;
+	margin-right: 15px;
+	margin-top: 15px; 
+}
+#vitrin {
+	text-align: center;
 }

@@ -1,22 +1,22 @@
 
 
 let container=document.querySelector(".container");
-		let mainRow = document.createElement('div');
-		mainRow.className="row";
-		container.appendChild(mainRow);
+let mainRow = document.createElement('div');
+mainRow.className="row";
+container.appendChild(mainRow);
 
 
 	// ---------------------------ICECREAM-------------------------
 
-		let iceCol = document.createElement('div');
-		iceCol.className="col-lg-4";
-		mainRow.appendChild(iceCol);
+	let iceCol = document.createElement('div');
+	iceCol.className="col-lg-4";
+	mainRow.appendChild(iceCol);
 
-		let iceH2 = document.createElement('h2');
-		iceH2.innerText="Мороженка";
-		iceCol.appendChild(iceH2);
+	let iceH2 = document.createElement('h2');
+	iceH2.innerText="Мороженка";
+	iceCol.appendChild(iceH2);
 
-		
+	
 
 
 
@@ -59,85 +59,85 @@ let container=document.querySelector(".container");
 		// let iceH4 = document.createElement('h4');
 		// iceConteiner.appendChild(iceH4);
 
-    
-    		
+		
+		
   //   	iceH3.innerText = el.name;
 
 		// iceImg.src= el.pic;
 
 		// iceH4.innerText = el.price;
 
-	
+		
   //  		if (el.type === 'cake' ) {
 
 
   //  			bakeCol.appendChild(iceConteiner);
-   				
+  
   //  		}
 
   //  		if (el.type === 'bake' ) {
 
 
   //  			cakeCol.appendChild(iceConteiner);
-   				
+  
   //  		}
 
   //   });
 
 
 
-	$.get( "http://codestory.ru/git/fe.php", 
+  $.get( "http://codestory.ru/git/fe.php", 
 
-		{ 
-			qtype: "getNyamki" 
-		}, function( data ) 
-	  
-	  {
-	    
-	    data = JSON.parse(data);
-		console.log( "Data Loaded: ", data);  
-	    
-	     data.forEach(el=> {
+  { 
+  	qtype: "getNyamki" 
+  }, function( data ) 
+  
+  {
+  	
+  	data = JSON.parse(data);
+  	console.log( "Data Loaded: ", data);  
+  	
+  	data.forEach(el=> {
 
-		 	let iceConteiner = document.createElement('div');
-			iceConteiner.className="container_goods";
-			iceCol.appendChild(iceConteiner);
+  		let iceConteiner = document.createElement('div');
+  		iceConteiner.className="container_goods";
+  		iceCol.appendChild(iceConteiner);
 
-			let iceH3 = document.createElement('h3');
-			iceConteiner.appendChild(iceH3);
+  		let iceH3 = document.createElement('h3');
+  		iceConteiner.appendChild(iceH3);
 
-			let iceImg = document.createElement('img');
-			iceConteiner.appendChild(iceImg);
+  		let iceImg = document.createElement('img');
+  		iceConteiner.appendChild(iceImg);
 
-			let iceH4 = document.createElement('h4');
-			iceConteiner.appendChild(iceH4);
+  		let iceH4 = document.createElement('h4');
+  		iceConteiner.appendChild(iceH4);
 
-	    
-	    		
-	    	iceH3.innerText = el.name;
+  		
+  		
+  		iceH3.innerText = el.name;
 
-			iceImg.src= el.pic;
+  		iceImg.src= el.pic;
 
-			iceH4.innerText = el.price;
+  		iceH4.innerText = el.price;
 
-		
-	   		if (el.type === 'cake' ) {
-
-
-	   			bakeCol.appendChild(iceConteiner);
-	   				
-	   		}
-
-	   		if (el.type === 'bake' ) {
+  		
+  		if (el.type === 'cake' ) {
 
 
-	   			cakeCol.appendChild(iceConteiner);
-	   				
-	   		}
+  			bakeCol.appendChild(iceConteiner);
+  			
+  		}
 
-    });
-	    
-	 });
+  		if (el.type === 'bake' ) {
+
+
+  			cakeCol.appendChild(iceConteiner);
+  			
+  		}
+
+  	});
+  	
+  });
 
 
 
