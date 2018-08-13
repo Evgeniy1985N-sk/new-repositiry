@@ -1,4 +1,6 @@
+// chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
+let body = document.querySelector('body');
 
 let container=document.querySelector(".container");
 let mainRow = document.createElement('div');
@@ -18,8 +20,6 @@ summBascket.innerHTML = `Сумма: ${valueSumm}`;
 let cartGoods={}
 
 var bascketModulWindow = document.getElementById('bascket');
-
-
 
 
 
@@ -84,6 +84,7 @@ function func() {
 
 				valueSumm += el.price;
 				summBascket.innerHTML = `Сумма: ${valueSumm}`;
+
 			}
 
 
@@ -149,16 +150,67 @@ function func() {
 					
 				}
 
+
+
 				bascketModulWindow.onclick = function() {
 
-					alert('sxs')
+
+					let coverDiv = document.createElement('div');
+					coverDiv.className = "cover-div";
+					body.appendChild(coverDiv);
+
+					let modulWindow = document.createElement('div');
+					modulWindow.className = "modul-window";
+					body.appendChild(modulWindow);
+
+
+					modulWindowFunc = function() {
+
+						let titleModulWindow = document.createElement('div');
+						modulWindow.appendChild(titleModulWindow);
+						titleModulWindow.innerHTML = 'Корзина заказов';
+						titleModulWindow.style.textAlign = 'center';
+
+						let nameOfProductTitles = document.createElement('div');
+						modulWindow.appendChild(nameOfProductTitles);
+						nameOfProductTitles.innerHTML = `<span style = "padding-left: 45px;">
+						Наименование</span>
+						<span style = "padding-left: 90px;">
+						Цена</span><span style = "padding-left: 30px;">Количество</span> 
+						<span style = "padding-left: 30px;">Сумма</span>`;
+
+
+						let modulWindowString = document.createElement('ol');
+						modulWindow.appendChild(modulWindowString);
+						
+
+						for (let b in cartGoods) {
+							
+							modulWindowString.innerHTML = `<li>b</li>`;
+
+
+						}
+
+						
+
+
+
+
+					}
+
+					modulWindowFunc();
+
+
+
+
 				}
+
 
 			});
 
 
-
 	});
+
 }
 
 //----------------------- get Category--------------------------------------------------------
