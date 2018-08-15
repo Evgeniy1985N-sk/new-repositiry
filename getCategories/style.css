@@ -28,13 +28,14 @@ h4 {
 	object-fit: cover;
 }
 .bascket {
+	position: fixed;
 	border: 1px solid blue; 
 	background: white;
 	padding-left: 30px;
 	width: 120px;
-	float: right;
-	margin-right: 15px;
-	margin-top: 15px; 
+	left: 90%;
+	top: 35px;
+	display: block; 
 }
 #vitrin {
 	text-align: center;
@@ -64,4 +65,10 @@ h4 {
 	margin-top: 390px;
 	display: block;
 	margin-left: 45%;
+}
+td {
+	border: 1px solid red;
+}
+th {
+	border: 1px solid red;
 }
