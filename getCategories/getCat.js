@@ -34,65 +34,59 @@ body.appendChild(coverDiv);
 
 // -----------------table in modul windiow------------------------------
 
-let modulWindow = document.createElement('table');
-modulWindow.className = "modul-window";
-body.appendChild(modulWindow);
+let modalWindowDiv = document.getElementById('modul-window');
 
-let titleModulWindow = document.createElement('caption');
-modulWindow.appendChild(titleModulWindow);
-titleModulWindow.innerHTML = 'Корзина заказов';
-titleModulWindow.style.textAlign = 'center';
+function createCartList() {
+	let modulWindow = document.createElement('table');
+	modulWindow.id='cartTable';
+	modalWindowDiv.appendChild(modulWindow);
 
-let nameOfProductTitlesTr = document.createElement('tr');
-modulWindow.appendChild(nameOfProductTitlesTr);
+	let titleModulWindow = document.createElement('caption');
+	modulWindow.appendChild(titleModulWindow);
+	titleModulWindow.innerHTML = 'Корзина заказов';
+	titleModulWindow.style.textAlign = 'center';
 
-let nameOfProductTitlesTh = document.createElement('th');
-nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh);
-nameOfProductTitlesTh.innerHTML = `Наименование`;
+	let nameOfProductTitlesTr = document.createElement('tr');
+	modulWindow.appendChild(nameOfProductTitlesTr);
 
-let nameOfProductTitlesTh2 = document.createElement('th');
-nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh2);
-nameOfProductTitlesTh2.innerHTML = `Цена`;
+	let nameOfProductTitlesTh = document.createElement('th');
+	nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh);
+	nameOfProductTitlesTh.innerHTML = `Наименование`;
 
-let nameOfProductTitlesTh3 = document.createElement('th');
-nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh3);
-nameOfProductTitlesTh3.innerHTML = `Количество`;
+	let nameOfProductTitlesTh2 = document.createElement('th');
+	nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh2);
+	nameOfProductTitlesTh2.innerHTML = `Цена`;
 
-let nameOfProductTitlesTh4 = document.createElement('th');
-nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh4);
-nameOfProductTitlesTh4.innerHTML = `Сумма`;
+	let nameOfProductTitlesTh3 = document.createElement('th');
+	nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh3);
+	nameOfProductTitlesTh3.innerHTML = `Количество`;
 
-
-// let nameOfProductTitlesTr2 = document.createElement('tr');
-// modulWindow.appendChild(nameOfProductTitlesTr2);
-
-
-
-let modulWindowString = document.createElement('tr');
-modulWindow.appendChild(modulWindowString);
-
-// nameOfProductTitlesTr2.appendChild(modulWindowString);
-
+	let nameOfProductTitlesTh4 = document.createElement('th');
+	nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh4);
+	nameOfProductTitlesTh4.innerHTML = `Сумма`;
+}
 
 coverDiv.style.display = 'none';
-modulWindow.style.display = 'none';
+modalWindowDiv.style.display = 'none';
 
 
 
 bascketModulWindow.onclick = function() {
 
-	modulWindowString.innerHTML ='';
+
 	makeOrder();
 
 	coverDiv.style.display = 'block';
-	modulWindow.style.display = 'block';
+	modalWindowDiv.style.display = 'block';
 
 }
 
 coverDiv.onclick = function() {
 
-	modulWindow.style.display = 'none';
+
+	modalWindowDiv.style.display = 'none';
 	coverDiv.style.display = 'none';
+
 
 }
 
@@ -101,30 +95,44 @@ function makeOrder() {
 
 	let nameGoodsBase;
 	let priceGoodsBase;
-
+	modalWindowDiv.innerHTML = "";
+	createCartList();
 	for (let b in cartGoods) {
 		
+		console.log('cartgoods: ', cartGoods);
+
 		goodsBase.forEach(function(item, i) {
+
+			
+
+			
+
+
 
 
 			if (b === item.name) {
+				
+				cartTable=document.getElementById('cartTable')
 
-				let valueSumm2 = 0;
-				let valueSumm3 = valueSumm2;
 
 				let newLi = document.createElement('tr');
-				modulWindowString.appendChild(newLi);
 
-				newLi.innerHTML = 
-				`<td><img src="${item.pic}" 
+
+				cartTable.appendChild(newLi);
+
+
+				newLi.innerHTML =
+
+				`<td><img src="${item.pic}"
 				style="height:30px; width:40px; padding-left: 7px;"/>
 				${b}</td>
 				<td>${item.price}</td>
-				<td>${cartGoods[b]}</td> 
+				<td>${cartGoods[b]}</td>
 				<td>${item.price * cartGoods[b]}</td>`;
 
 
 			}
+
 
 		});
 		
@@ -142,7 +150,7 @@ function buy(price, name) {
 	valueSumm += price;
 	summBascket.innerHTML = `Сумма: ${valueSumm}`;
 
-	if (cartGoods[name]) cartGoods[name]+=1; 
+	if (cartGoods[name]) cartGoods[name]+=1;
 
 	else cartGoods[name]=1;
 
@@ -154,7 +162,7 @@ function buy(price, name) {
 
 	}
 
-
+	console.log(valueGoods);
 	
 
 	function func() {

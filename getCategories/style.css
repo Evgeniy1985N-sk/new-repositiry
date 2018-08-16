@@ -50,7 +50,7 @@ h4 {
   background-color: gray;
   opacity: 0.3;
 }
-.modul-window {
+#modul-window {
   position: fixed;
   top: 170px;
   left: 36.8%;
