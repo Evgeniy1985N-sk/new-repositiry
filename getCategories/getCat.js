@@ -1,3 +1,4 @@
+
 // chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
 let body = document.querySelector('body');
@@ -36,10 +37,22 @@ body.appendChild(coverDiv);
 
 let modalWindowDiv = document.getElementById('modul-window');
 
-function createCartList() {
+function createCartList()
+
+
+{
+
+
 	let modulWindow = document.createElement('table');
 	modulWindow.id='cartTable';
-	modalWindowDiv.appendChild(modulWindow);
+	// modalWindowDiv.appendChild(modulWindow);
+
+	let modalDiv1 = document.createElement('div');
+	modalDiv1.style.overflow = 'auto';
+	modalDiv1.style.height = '380px';
+	modalWindowDiv.appendChild(modalDiv1);
+	modalDiv1.appendChild(modulWindow);
+
 
 	let titleModulWindow = document.createElement('caption');
 	modulWindow.appendChild(titleModulWindow);
@@ -64,14 +77,23 @@ function createCartList() {
 	let nameOfProductTitlesTh4 = document.createElement('th');
 	nameOfProductTitlesTr.appendChild(nameOfProductTitlesTh4);
 	nameOfProductTitlesTh4.innerHTML = `Сумма`;
+
+
+
 }
+
+
+
 
 coverDiv.style.display = 'none';
 modalWindowDiv.style.display = 'none';
 
 
 
-bascketModulWindow.onclick = function() {
+bascketModulWindow.onclick = function() 
+
+
+{
 
 
 	makeOrder();
@@ -81,7 +103,11 @@ bascketModulWindow.onclick = function() {
 
 }
 
-coverDiv.onclick = function() {
+
+coverDiv.onclick = function() 
+
+
+{
 
 
 	modalWindowDiv.style.display = 'none';
@@ -91,27 +117,47 @@ coverDiv.onclick = function() {
 }
 
 
-function makeOrder() {
+function makeOrder() 
+
+
+
+{
 
 	let nameGoodsBase;
 	let priceGoodsBase;
 	modalWindowDiv.innerHTML = "";
+
 	createCartList();
-	for (let b in cartGoods) {
+
+
+
+
+	for (let b in cartGoods) 
+
+
+	{
 		
-		console.log('cartgoods: ', cartGoods);
 
-		goodsBase.forEach(function(item, i) {
+
+
+		goodsBase.forEach(function(item, i) 
+
+
+
+
+		{
 
 			
-
 			
 
 
+			if (b === item.name) 
 
 
-			if (b === item.name) {
+			{
 				
+				
+
 				cartTable=document.getElementById('cartTable')
 
 
@@ -124,25 +170,57 @@ function makeOrder() {
 				newLi.innerHTML =
 
 				`<td><img src="${item.pic}"
-				style="height:30px; width:40px; padding-left: 7px;"/>
+				style="height:30px; width:40px; padding-left: 2px;"/>
 				${b}</td>
-				<td>${item.price}</td>
-				<td>${cartGoods[b]}</td>
-				<td>${item.price * cartGoods[b]}</td>`;
+				<td style="text-align:center;">${item.price}</td>
+				<td style="text-align:center;">${cartGoods[b]}</td>
+				<td style="text-align:center;">${item.price * cartGoods[b]}</td>`;
+
+				
+
+
 
 
 			}
 
 
 		});
-		
 
 
 
 	}
+
+
+
+	let totalModalWindow = document.createElement('tr');
+	cartTable.appendChild(totalModalWindow);
+
+	totalModalWindow.innerHTML = `
+
+	<td colspan="4" style="text-align:right; padding-right:3px;">Итого: ${valueSumm}</td>
+
+	`;
+
+
+
+
+	let btnModalWundow = document.createElement('button');
+	modalWindowDiv.appendChild(btnModalWundow);
+	btnModalWundow.className="btn btn-primary";
+	btnModalWundow.innerHTML = "Оформить заказ";
+
+
+
+
+
+
+
 }
 
-function buy(price, name) {
+function buy(price, name) 
+
+
+{
 
 	valueGoods = valueGoods + 1;
 	goodsBascket.innerHTML = `товаров: ${valueGoods}`;
@@ -165,23 +243,28 @@ function buy(price, name) {
 	console.log(valueGoods);
 	
 
-	function func() {
+	function func() 
+
+
+	{
 
 		$.get( "http://codestory.ru/git/fe.php", 
 
-		{ 
+		{
 			qtype: "getNyamki" 
-		}, 
+		},
 
-		function( data ) 
+		function( data )
 
 		{
 
 			data = JSON.parse(data);
 			goodsBase = data;
-			console.log( "Data Loaded: ", data);  
+			console.log( "Data Loaded: ", data);
 
-			data.forEach(el=> 
+			data.forEach(el=>
+
+
 
 			{
 
@@ -207,6 +290,7 @@ function buy(price, name) {
 
 
 				let textBuy = document.createElement('div');
+				textBuy.className="text-buy";
 				iceH4.appendChild(textBuy);
 				textBuy.innerText = 'Купить';
 				textBuy.style.cursor = 'pointer';
@@ -214,6 +298,7 @@ function buy(price, name) {
 				textBuy.style.marginRight = '25px';
 				textBuy.style.lineHeight = '2';
 				textBuy.style.fontSize = '20px';
+
 
 
 
@@ -229,7 +314,10 @@ function buy(price, name) {
 
 				makeOrder();
 
-				function createContainer() {
+				function createContainer() 
+
+
+				{
 
 
 
@@ -261,6 +349,7 @@ function buy(price, name) {
 
 
 					let textBuy = document.createElement('div');
+					textBuy.className="text-buy";
 					iceH4.appendChild(textBuy);
 					textBuy.innerText = 'Купить';
 					textBuy.style.cursor = 'pointer';
@@ -296,13 +385,16 @@ function buy(price, name) {
 
 
 
-$.get( "http://codestory.ru/git/fe.php", 
+$.get( "http://codestory.ru/git/fe.php",
 
 { 
-	qtype: "getCategories" 
-}, 
+	qtype: "getCategories"
+},
 
-function( data2 ) {
+function( data2 ) 
+
+
+{
 
 
 
