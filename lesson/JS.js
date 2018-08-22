@@ -74,14 +74,16 @@
 
 
 	var btn = document.querySelector('button');
+	var word;
 	
 	btn.onclick = function() {
 
 		var word = document.getElementById('text').value;
 		console.log(word);
-
+		
 }
-
+btn.onclick();
+console.log(word);
 
 
 	
