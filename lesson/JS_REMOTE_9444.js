@@ -87,19 +87,6 @@ window.onload = function() {
 
 		 var translate = document.querySelector('.translate');
 
-<<<<<<< HEAD
-	var btn = document.querySelector('button');
-	var word;
-	
-	btn.onclick = function() {
-
-		var word = document.getElementById('text').value;
-		console.log(word);
-		
-}
-btn.onclick();
-console.log(word);
-=======
 		 // Назначаем обработчик события load
 
 		 req.addEventListener('load', function () {
@@ -119,7 +106,6 @@ console.log(word);
 		      translate.innerHTML = 'К сожалению, перевод для данного слова не найден';
 		      return;
 		    }
->>>>>>> adb5c483b28805a6c5f1753f8e3aa7cf9d4bbb34
 
 		    // Если все в порядке, то отображаем перевод на странице
 		    translate.innerHTML = response.text.join('<br>'); // вставляем его на страницу

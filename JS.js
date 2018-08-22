@@ -1,12 +1,12 @@
 
 
-let container=document.querySelector(".container");
+		let container=document.querySelector(".container");
 		let mainRow = document.createElement('div');
 		mainRow.className="row";
 		container.appendChild(mainRow);
 
 
-	// ---------------------------ICECREAM-------------------------
+	// ---------------------------ICECREAM----------------------------------
 
 		let iceCol = document.createElement('div');
 		iceCol.className="col-lg-4";
@@ -20,7 +20,7 @@ let container=document.querySelector(".container");
 
 
 
-		//-------BAKE----------------------------------------------------------
+	//--------------------------------BAKE-----------------------------------
 
 		let bakeCol = document.createElement('div');
 		bakeCol.className="col-lg-4";
@@ -30,7 +30,7 @@ let container=document.querySelector(".container");
 		bakeH2.innerText="Торты";
 		bakeCol.appendChild(bakeH2);
 
-		// ---------CAKE--------------------------------------------------------
+		// ----------------------------CAKE----------------------------------
 
 		let cakeCol = document.createElement('div');
 		cakeCol.className="col-lg-4";
@@ -42,47 +42,47 @@ let container=document.querySelector(".container");
 
 		
 
-	// ----------------------------function-------------
+	// ---------------------------------function------------------------------
 
-	 nyamki.forEach(el=> {
+		 nyamki.forEach(el=> {
 
-	 	let iceConteiner = document.createElement('div');
-		iceConteiner.className="container_goods";
-		iceCol.appendChild(iceConteiner);
+		 	let iceConteiner = document.createElement('div');
+			iceConteiner.className="container_goods";
+			iceCol.appendChild(iceConteiner);
 
-		let iceH3 = document.createElement('h3');
-		iceConteiner.appendChild(iceH3);
+			let iceH3 = document.createElement('h3');
+			iceConteiner.appendChild(iceH3);
 
-		let iceImg = document.createElement('img');
-		iceConteiner.appendChild(iceImg);
+			let iceImg = document.createElement('img');
+			iceConteiner.appendChild(iceImg);
 
-		let iceH4 = document.createElement('h4');
-		iceConteiner.appendChild(iceH4);
+			let iceH4 = document.createElement('h4');
+			iceConteiner.appendChild(iceH4);
 
-    
-    		
-    	iceH3.innerText = el.name;
+	    
+	    		
+	    	iceH3.innerText = el.name;
 
-		iceImg.src= el.pic;
+			iceImg.src= el.pic;
 
-		iceH4.innerText = el.price;
+			iceH4.innerText = el.price;
 
-	
-   		if (el.type === 'cake' ) {
-
-
-   			bakeCol.appendChild(iceConteiner);
-   				
-   		}
-
-   		if (el.type === 'bake' ) {
+		
+	   		if (el.type === 'cake' ) {
 
 
-   			cakeCol.appendChild(iceConteiner);
-   				
-   		}
+	   			bakeCol.appendChild(iceConteiner);
+	   				
+	   		}
 
-    });
+	   		if (el.type === 'bake' ) {
+
+
+	   			cakeCol.appendChild(iceConteiner);
+	   				
+	   		}
+
+	    });
 
 
 // http://codestory.ru/git/fe.php
@@ -92,13 +92,13 @@ let container=document.querySelector(".container");
 //$.get()(function(){})
 
 
-var filePhp = $.get( "http://codestory.ru/git/fe.php", 
-	{ 
-		qtype: "getNyamki" 
-	}, function( data ) 
-  {
-    console.log( "Data Loaded: ", JSON.parse(data));//JSON
- });
+// var filePhp = $.get( "http://codestory.ru/git/fe.php", 
+// 	{ 
+// 		qtype: "getNyamki" 
+// 	}, function( data ) 
+//   {
+//     console.log( "Data Loaded: ", JSON.parse(data));//JSON
+//  });
 // var event = JSON.parse(filePhp)
 //http://phpfaq.ru/newbie/na_tanke#js
 
